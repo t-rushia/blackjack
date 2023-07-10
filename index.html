@@ -11,23 +11,32 @@
     <div class="game">
       <div class="game-total">
         <h3>Player:</h3>
-        <p id="playertotal-el">16</p>
-        <h3>Dealer:</h3>
-        <p id="dealertotal-el">17</p>
+        <p id="playertotal-el"></p>
+        <h3 id="dealertag">Dealer:</h3>
+        <p id="dealertotal-el"></p>
       </div>
 
+      <p id="gameresults-el"></p>
+
       <div class="card-total">
-        <h3>Cards:</h3>
-        <p id="playercards-el"></p>
-        <h3>Sum:</h3>
-        <p id="sum-el"></p>
+        <div class="card-container">
+          <h3>Cards:</h3>
+          <p id="playercards-el"></p>
+        </div>
+        <div class="card-container">
+          <h3 id="sumtag">Sum:</h3>
+          <p id="sum-el"></p>
+        </div>
       </div>
+
+      <p id="nextmove-el"></p>
 
       <div class="btn-container">
         <button onclick="hit()">Hit</button>
         <button onclick="stand()">Stand</button>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

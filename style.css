@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Caprasimo", cursive;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: url(img/background.jpg);
+}
+
+h3 {
+  color: white;
+  font-size: 28px;
+  letter-spacing: 1.8px;
+  text-shadow: 1px 0 2px black;
+}
+
+p {
+  font-size: 24px;
+  color: white;
+  letter-spacing: 1.8px;
+  text-shadow: 2px 0 1px black;
+}
+
+button {
+  height: 50px;
+  width: 80px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 1px;
+  transition: ease 0.3s all 0s;
+}
+
+button:hover {
+  background: white;
+  color: rgb(204, 154, 60);
+}
+
+#dealertag {
+  color: rgb(204, 154, 60);
+}
+
+#sumtag {
+  color: rgb(204, 154, 60);
+}
+
+#gameresults-el,
+#nextmove-el {
+  font-size: 18px;
+  font-family: sans-serif;
+  letter-spacing: normal;
+}
+
+.game {
+  backdrop-filter: blur(5px);
+  height: 350px;
+  width: 450px;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-total {
+  display: flex;
+  flex-direction: column;
+  margin-right: 200px;
+  gap: 10px;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
