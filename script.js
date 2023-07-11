@@ -1,5 +1,22 @@
 function startGame() {
-  playerCards.textContent = `${firstCard}, ${secondCard}, `;
+  let firstCard = randomCard();
+  let secondCard = randomCard();
+  cards = [firstCard, secondCard];
+  sum = firstCard + secondCard;
+  playerSum.textContent = sum;
+  inGame = true;
+  renderGame();
+}
+
+function randomCard() {
+  return Math.floor(Math.random() * 11) + 1;
+}
+
+function renderGame() {
+  playerCards.textContent = "";
+  for (let i = 0; i < cards.length; i++) {
+    playerCards.textContent += `${cards[i]}, `;
+  }
   playerDisplayTotal.textContent = sum;
   playerSum.textContent = sum;
 
@@ -15,19 +32,18 @@ function startGame() {
 }
 
 function hit() {
-  let newCard = 7;
+  let newCard = randomCard();
+  cards.push(newCard);
   sum += newCard;
   playerDisplayTotal.textContent = sum;
-  playerCards.textContent += `${newCard}`;
   playerSum.textContent = sum;
-  startGame();
+  renderGame();
 }
 
-let firstCard = 10;
-let secondCard = 4;
-let sum = firstCard + secondCard;
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let inGame = true;
+let inGame = false;
 let playerCards = document.querySelector("#playercards-el");
 let playerDisplayTotal = document.querySelector("#playertotal-el");
 let gameResults = document.querySelector("#gameresults-el");
