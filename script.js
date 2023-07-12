@@ -30,9 +30,11 @@ function renderGame() {
   } else if (sum === 21) {
     gameResults.textContent = "BlackJack! Congrats.";
     hasBlackJack = true;
+    stand();
   } else {
     gameResults.textContent = "You broke, sorrry you lose.";
     inGame = false;
+    stand();
   }
 }
 
@@ -50,6 +52,17 @@ function hit() {
 function stand() {
   let options = [17, 18, 19, 20, 21, 22, 23, 24, 25];
   let dealerChoice = options[Math.floor(Math.random() * options.length)];
+  dealerTotal.textContent = dealerChoice;
+
+  if (sum === dealerChoice) {
+    gameResults.textContent = "You broke even.";
+  } else if (sum > dealerChoice && sum <= 21) {
+    gameResults.textContent = "You win!";
+  } else if (dealerChoice > sum && dealerChoice <= 21) {
+    gameResults.textContent = "Dealer wins.";
+  } else if (sum === 21) {
+    gameResults.textContent = "BlackJack! You win!";
+  }
 }
 
 let cards = [];
@@ -61,3 +74,4 @@ let playerDisplayTotal = document.querySelector("#playertotal-el");
 let gameResults = document.querySelector("#gameresults-el");
 let playerSum = document.querySelector("#sum-el");
 let playerDetails = document.querySelector("#player-info");
+let dealerTotal = document.querySelector("#dealertotal-el");
