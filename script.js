@@ -1,4 +1,5 @@
 function startGame() {
+  dealerTotal.textContent = "";
   let player = {
     name: prompt("What is your name?"),
     chips: prompt("How much would you like to bet?")
@@ -62,6 +63,8 @@ function stand() {
     gameResults.textContent = "Dealer wins.";
   } else if (sum === 21) {
     gameResults.textContent = "BlackJack! You win!";
+  } else if (dealerChoice > 21) {
+    gameResults.textContent = "You win!";
   }
 }
 
